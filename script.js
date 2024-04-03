@@ -1,33 +1,49 @@
-const box1 = { x: 10, y: 10, latura: 50, culoare: 'red', numar: 1 };
-const box2 = { x: 70, y: 10, latura: 50, culoare: 'pink', numar: 2 };
-const box3 = { x: 130, y: 10, latura: 50, culoare: 'blue', numar: 3 };
-const box4 = { x: 190, y: 10, latura: 50, culoare: 'brown', numar: 4 };
+const boxes = [
+    { x: 10, y: 10, latura: 50, nr: 1 },
+    { x: 70, y: 10, latura: 50, nr: 2 },
+    { x: 130, y: 10, latura: 50, nr: 3 },
+    { x: 190, y: 10, latura: 50, nr: 4 },
+    { x: 250, y: 10, latura: 50, nr: 5 },
+    { x: 310, y: 10, latura: 50, nr: 6 },
+    { x: 370, y: 10, latura: 50, nr: 7 },
+    { x: 10, y: 70, latura: 50, nr: 8 },
+    { x: 70, y: 70, latura: 50, nr: 9 },
+    { x: 130, y: 70, latura: 50, nr: 10 },
+    { x: 190, y: 70, latura: 50, nr: 11 },
+    { x: 250, y: 70, latura: 50, nr: 12 },
+    { x: 310, y: 70, latura: 50, nr: 13 },
+    { x: 370, y: 70, latura: 50, nr: 14 },
+    { x: 10, y: 130, latura: 50, nr: 15 },
+    { x: 70, y: 130, latura: 50, nr: 16 },
+    { x: 130, y: 130, latura: 50, nr: 17 },
+    { x: 190, y: 130, latura: 50, nr: 18 },
+    { x: 250, y: 130, latura: 50, nr: 19 },
+    { x: 310, y: 130, latura: 50, nr: 20 },
+    { x: 370, y: 130, latura: 50, nr: 21 },
+    { x: 10, y: 190, latura: 50, nr: 22 },
+    { x: 70, y: 190, latura: 50, nr: 23 },
+    { x: 130, y: 190, latura: 50, nr: 24 },
+    { x: 190, y: 190, latura: 50, nr: 25 },
+    { x: 250, y: 190, latura: 50, nr: 26 },
+    { x: 310, y: 190, latura: 50, nr: 27 },
+    { x: 370, y: 190, latura: 50, nr: 28 }
+];
+
 function setup() {
     createCanvas(600, 400);
     textSize(15); 
     textAlign(CENTER, CENTER);
+    for (let box of boxes) {
+        box.culoare = color(random(255), random(255), random(255));
+    }
 }
 
 function draw() {
     background("gray");
-    fill(box1.culoare);
-    rect(box1.x, box1.y, box1.latura, box1.latura);
-    fill("black"); 
-    text(box1.numar, box1.x + box1.latura / 2, box1.y + box1.latura / 2);
-
-    fill(box2.culoare);
-    rect(box2.x, box2.y, box2.latura, box2.latura);
-    fill("black");
-    text(box2.numar, box2.x + box2.latura / 2, box2.y + box2.latura / 2);
-
-    fill(box3.culoare);
-    rect(box3.x, box3.y, box3.latura, box3.latura);
-    fill("black"); 
-    text(box3.numar, box3.x + box3.latura / 2, box3.y + box3.latura / 2);
-
-    fill(box4.culoare);
-    rect(box4.x, box4.y, box4.latura, box4.latura);
-    fill("black"); 
-    text(box4.numar, box4.x + box4.latura / 2, box4.y + box4.latura / 2);
-
+    for (let box of boxes) {
+        fill(box.culoare);
+        rect(box.x, box.y, box.latura, box.latura);
+        fill("black"); 
+        text(box.nr, box.x + box.latura / 2, box.y + box.latura / 2);
+    }
 }
